@@ -1,0 +1,161 @@
+{
+  "id": "tt14586544",
+  "title": "Billy the Kid",
+  "link": "https://www.imdb.com/title/tt14586544/",
+  "is_ongoing": false,
+  "country": "US",
+  "season": 3,
+  "count": 8,
+  "pagination": {
+    "total": 8,
+    "next_cursor": null,
+    "has_more": false,
+    "next": null
+  },
+  "results": [
+    {
+      "id": "tt33562897",
+      "title": "The Beginning of the End",
+      "link": "https://www.imdb.com/title/tt33562897/",
+      "season": 3,
+      "episode": 1,
+      "release_date": "2025-09-28",
+      "plot": "Through the wild backdrop of the Lincoln County War, the legendary Billy the Kid becomes ensnared in a deadly game of cat and mouse as lawman Pat Garrett orchestrates the ultimate trap.",
+      "rating": {
+        "value": 7.7,
+        "vote_count": 121
+      },
+      "image": {
+        "link": "https://m.media-amazon.com/images/M/MV5BYjA2NzljYWEtZmJkNS00ZTk1LWI1MTQtOTFiZDU5ZGU2NWZlXkEyXkFqcGc@._V1_.jpg",
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "tt35309288",
+      "title": "Two Shots",
+      "link": "https://www.imdb.com/title/tt35309288/",
+      "season": 3,
+      "episode": 2,
+      "release_date": "2025-10-05",
+      "plot": "Billy and the Regulators are ambushed by Garrett after a betrayal and Jesse deals with a loss, while Catron has a conflict with his daughter as he tries to seize The House from Riley.",
+      "rating": {
+        "value": 7.7,
+        "vote_count": 112
+      },
+      "image": {
+        "link": "https://m.media-amazon.com/images/M/MV5BYjA2NzljYWEtZmJkNS00ZTk1LWI1MTQtOTFiZDU5ZGU2NWZlXkEyXkFqcGc@._V1_.jpg",
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "tt35309289",
+      "title": "Take Your Medicine",
+      "link": "https://www.imdb.com/title/tt35309289/",
+      "season": 3,
+      "episode": 3,
+      "release_date": "2025-10-12",
+      "plot": "After another surprise attack from Garrett, Billy loses a trusted friend forcing him to seek revenge while Emily makes a calculated decision to reconcile with her father by asking for help.",
+      "rating": {
+        "value": 8,
+        "vote_count": 112
+      },
+      "image": {
+        "link": "https://m.media-amazon.com/images/M/MV5BYjA2NzljYWEtZmJkNS00ZTk1LWI1MTQtOTFiZDU5ZGU2NWZlXkEyXkFqcGc@._V1_.jpg",
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "tt35309290",
+      "title": "The Shepherd's Hut",
+      "link": "https://www.imdb.com/title/tt35309290/",
+      "season": 3,
+      "episode": 4,
+      "release_date": "2025-10-19",
+      "plot": "Garrett and his posse relentlessly pursue Billy and the Regulators and after a tense stand-off, several close allies are forced to choose between loyalty and survival.",
+      "rating": {
+        "value": 8,
+        "vote_count": 100
+      },
+      "image": {
+        "link": "https://m.media-amazon.com/images/M/MV5BYjA2NzljYWEtZmJkNS00ZTk1LWI1MTQtOTFiZDU5ZGU2NWZlXkEyXkFqcGc@._V1_.jpg",
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "tt35309291",
+      "title": "Breaking the Shackles",
+      "link": "https://www.imdb.com/title/tt35309291/",
+      "season": 3,
+      "episode": 5,
+      "release_date": "2025-10-26",
+      "plot": "Garrett doggedly searches the New Mexico Territory, but with the support of friends and allies, Billy stays one step ahead of the determined pursuit.",
+      "rating": {
+        "value": 8.3,
+        "vote_count": 105
+      },
+      "image": {
+        "link": "https://m.media-amazon.com/images/M/MV5BYjA2NzljYWEtZmJkNS00ZTk1LWI1MTQtOTFiZDU5ZGU2NWZlXkEyXkFqcGc@._V1_.jpg",
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "tt35309293",
+      "title": "The Chain Gang",
+      "link": "https://www.imdb.com/title/tt35309293/",
+      "season": 3,
+      "episode": 6,
+      "release_date": "2025-11-09",
+      "plot": "Billy reunites with family during recovery as the Regulators plan a prison break for a friend. Meanwhile, Garrett reveals to Emily the truth about Edgar and her father's role.",
+      "rating": {
+        "value": 8.2,
+        "vote_count": 99
+      },
+      "image": {
+        "link": "https://m.media-amazon.com/images/M/MV5BYjA2NzljYWEtZmJkNS00ZTk1LWI1MTQtOTFiZDU5ZGU2NWZlXkEyXkFqcGc@._V1_.jpg",
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "tt35309294",
+      "title": "The Last Buffalo",
+      "link": "https://www.imdb.com/title/tt35309294/",
+      "season": 3,
+      "episode": 7,
+      "release_date": "2025-11-16",
+      "plot": "Years after losing his badge in shame, Pat Garrett confronts his past when Billy and Jesse track him down for revenge and their own frontier justice.",
+      "rating": {
+        "value": 8,
+        "vote_count": 110
+      },
+      "image": {
+        "link": "https://m.media-amazon.com/images/M/MV5BYjA2NzljYWEtZmJkNS00ZTk1LWI1MTQtOTFiZDU5ZGU2NWZlXkEyXkFqcGc@._V1_.jpg",
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "tt35309295",
+      "title": "The Redeemed",
+      "link": "https://www.imdb.com/title/tt35309295/",
+      "season": 3,
+      "episode": 8,
+      "release_date": "2025-11-23",
+      "plot": "Billy seeks vengeance against Thomas Catron in New Mexico, joining forces with Governor's daughter Emily. His final quest for justice brings the legendary outlaw's tale to its ultimate conclusion.",
+      "rating": {
+        "value": 7.9,
+        "vote_count": 120
+      },
+      "image": {
+        "link": "https://m.media-amazon.com/images/M/MV5BYjA2NzljYWEtZmJkNS00ZTk1LWI1MTQtOTFiZDU5ZGU2NWZlXkEyXkFqcGc@._V1_.jpg",
+        "width": null,
+        "height": null
+      }
+    }
+  ]
+}
