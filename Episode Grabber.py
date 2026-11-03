@@ -2,7 +2,7 @@
 
             Given movie/tv episode file,(ex. 12590266-cyberpunk-edgerunners-2022.S2.E8.1080p
             or 10377864-beware-boiuna-2026) returns cleaned up file name with episode title
-            (ex. "Cyberpunk Edgerunners (2022) S2 Ep8 Heart / Shinzô" or "Beware Boiuna (2026)")
+            (ex. "Cyberpunk Edgerunners (2022) S2 Ep8 Heart  Shinzô" or "Beware Boiuna (2026)")
 
 '''
 import requests
