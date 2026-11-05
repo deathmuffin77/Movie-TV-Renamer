@@ -40,14 +40,14 @@ def createJSON(TVID,season,APIKEY): #checks if show's season JSON exists, if doe
    episodeJSONpath=(Path("/Users/Ian/Desktop/Title Grabber/Logs/"+fileName))
    
    if episodeJSONpath.is_file():
-        print("JSON Exists...")
-        print(episodeJSONpath)
+        print("JSON Exists...   " + TVID +" Season " + season)
+        #print(episodeJSONpath)
         useAPI= False
         return episodeJSONpath
    else:
         useAPI= True
    if useAPI:
-        print("Creating JSON File...")
+        print("Creating JSON File...   "+TVID +" Season " + season)
         conn = http.client.HTTPSConnection("imdb255.p.rapidapi.com")
 
         headers = {
@@ -141,24 +141,39 @@ def tvRename(fileName, episodeTitle): #renames TV files
         episodeTitle1=episodeTitle1+episodeTitle[i]
         
     newName="".join(newNameList)+year+" "+"".join(newNameList2)+" "+episodeTitle1
-    print(newName)
     return (newName)
 
 def main():
     APIKEY = sys.argv[1]
     print("API Key = "+APIKEY)
+    print("")
+    print("     Files To Name . . .")
     folderpath=Path(f'C:/Users/Ian/Desktop/Title Grabber/1.Renamer/')
     for file in folderpath.iterdir():
         print(file.stem)
+    print("     Finding JSON Files . . .")
     for file in folderpath.iterdir():
         fileName=file.stem
         imdbID, sNum, epNum = fileNameDecoder(fileName)
         if checkIfShow(fileName):
          array=tvRename(fileName, getEpisodeTitle(createJSON(imdbID,sNum,APIKEY), epNum))
-         file.rename(Path(file.parent, f"{array}{file.suffix}"))
+         newFilePath=Path(file.parent, f"{array}{file.suffix}")
+         if newFilePath.is_file()==False:
+            file.rename(newFilePath)
+            pass
+         else:
+            print("Name Error - Duplicate")
+            continue
         else:
          array=movieRename(fileName)
-         file.rename(Path(file.parent, f"{array}{file.suffix}"))
+         newFilePath=Path(file.parent, f"{array}{file.suffix}")
+         if newFilePath.is_file()==False:
+            file.rename(newFilePath)
+            pass
+         else:
+            print("Name Error - Duplicate")
+            continue
+    print("     New Files . . .")
     for file in folderpath.iterdir():
      print(file.stem)
     
