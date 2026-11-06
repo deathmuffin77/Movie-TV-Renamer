@@ -158,9 +158,10 @@ def main():
     APIKEY = sys.argv[1]
     print("API Key = "+APIKEY)
     print("\n     Files To Name . . .")
-    folderpath=Path(f'C:/Users/Ian/Desktop/Title Grabber/1.Renamer/')
-    tvpath=Path(f'C:/Users/Ian/Desktop/Title Grabber/2.TV DONE/')
-    moviepath=Path(f'C:/Users/Ian/Desktop/Title Grabber/3.Movies DONE/')
+    parentpath=Path(__file__).resolve().parent
+    moviepath=parentpath.parent / "3.Movies DONE"
+    tvpath=parentpath.parent / "2.TV DONE"
+    folderpath=parentpath.parent / "1.Renamer"
     for file in folderpath.iterdir():
         print(file.stem)
     print("     Finding JSON Files . . .")
@@ -168,9 +169,9 @@ def main():
         fileName=file.stem
         imdbID, sNum, epNum = fileNameDecoder(fileName)
         if checkIfShow(fileName):
-         array=tvRename(fileName, getEpisodeTitle(createJSON(imdbID,sNum,APIKEY), epNum))
+         array=tvRename(fileName, getEpisodeTitle(createJSON(imdbID,sNum,APIKEY), epNum))+file.suffix
          newFilePath=Path(file.parent, f"{array}{file.suffix}")
-         moveFilePath=Path(f'C:/Users/Ian/Desktop/Title Grabber/2.TV DONE/{array}{file.suffix}')
+         moveFilePath=tvpath / array
          if moveFilePath.is_file()==False:
             file.rename(newFilePath)
             newFilePath.replace(moveFilePath)
@@ -178,9 +179,9 @@ def main():
             print("Name Error - Duplicate")
             continue
         else:
-         array=movieRename(fileName)
+         array=movieRename(fileName)+file.suffix
          newFilePath=Path(file.parent, f"{array}{file.suffix}")
-         moveFilePath=Path(f'C:/Users/Ian/Desktop/Title Grabber/3.Movies DONE/{array}{file.suffix}')
+         moveFilePath=tvpath / array
          if moveFilePath.is_file()==False:
             file.rename(newFilePath)
             newFilePath.replace(moveFilePath)
