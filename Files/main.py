@@ -87,9 +87,19 @@ def getEpisodeTitle(episodeJSONpath, episode): #queries JSON file for episode ti
 def movieRename(fileName): #renames movie files
     newNameList=[]
     year=""
+    breakF=False
     for char in range(len(fileName)):
       if(char<=8 and fileName[char].isalpha()==False):
         continue
+      if fileName[char+4] =="[":
+        year="("+fileName[char:char+4]+")"
+        if year[1:5].isdigit():
+            break
+        else:
+            print("Year Error - Not Found")
+            year=""
+            breakF=True
+            breakC=0
       if fileName[char].isalpha():
         if fileName[char-1].isalpha():
             newNameList.append(fileName[char]) 
@@ -97,11 +107,12 @@ def movieRename(fileName): #renames movie files
             newNameList.append(fileName[char].upper())
       elif fileName[char]=="-":
         newNameList.append(" ")
-      elif fileName[char+4] =="[":
-        year="("+fileName[char:char+4]+")"
-        break
       elif fileName[char].isdigit():
         newNameList.append(fileName[char])
+      if breakF:
+        breakC=breakC+1
+        if breakC==4:
+            break
     newName="".join(newNameList)+year
     return newName
 
@@ -146,9 +157,10 @@ def tvRename(fileName, episodeTitle): #renames TV files
 def main():
     APIKEY = sys.argv[1]
     print("API Key = "+APIKEY)
-    print("")
-    print("     Files To Name . . .")
+    print("\n     Files To Name . . .")
     folderpath=Path(f'C:/Users/Ian/Desktop/Title Grabber/1.Renamer/')
+    tvpath=Path(f'C:/Users/Ian/Desktop/Title Grabber/2.TV DONE/')
+    moviepath=Path(f'C:/Users/Ian/Desktop/Title Grabber/3.Movies DONE/')
     for file in folderpath.iterdir():
         print(file.stem)
     print("     Finding JSON Files . . .")
@@ -158,23 +170,31 @@ def main():
         if checkIfShow(fileName):
          array=tvRename(fileName, getEpisodeTitle(createJSON(imdbID,sNum,APIKEY), epNum))
          newFilePath=Path(file.parent, f"{array}{file.suffix}")
-         if newFilePath.is_file()==False:
+         moveFilePath=Path(f'C:/Users/Ian/Desktop/Title Grabber/2.TV DONE/{array}{file.suffix}')
+         if moveFilePath.is_file()==False:
             file.rename(newFilePath)
-            pass
+            newFilePath.replace(moveFilePath)
          else:
             print("Name Error - Duplicate")
             continue
         else:
          array=movieRename(fileName)
          newFilePath=Path(file.parent, f"{array}{file.suffix}")
-         if newFilePath.is_file()==False:
+         moveFilePath=Path(f'C:/Users/Ian/Desktop/Title Grabber/3.Movies DONE/{array}{file.suffix}')
+         if moveFilePath.is_file()==False:
             file.rename(newFilePath)
-            pass
+            newFilePath.replace(moveFilePath)
          else:
             print("Name Error - Duplicate")
             continue
-    print("     New Files . . .")
+    print("     Rejects . . .")
     for file in folderpath.iterdir():
+     print(file.stem)
+    print("     Movies . . .")
+    for file in moviepath.iterdir():
+     print(file.stem)
+    print("     TV . . .")
+    for file in tvpath.iterdir():
      print(file.stem)
     
 main()
